@@ -1,5 +1,7 @@
-/app/**/*.js
-/app/**/*.js.map
+/src/**/*.js
+/src/**/*.js.map
 /typings/*
 /node_modules/*
 npm-debug.log
+bs.config.json~
+.idea/**/*
