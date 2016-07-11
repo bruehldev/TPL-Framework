@@ -1,0 +1,20 @@
+{
+  "name": "polymer",
+  "homepage": "https://github.com/bruehldev/TPL-Framework",
+  "authors": [
+    "(christophtrybek <christoph.trybek@gmail.com>)"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.5.0"
+  }
+}
