@@ -1,0 +1,67 @@
+<!-- import latest release version of all components from polygit-->
+<link rel="import" href="https://polygit.org/components/polymer/polymer.html">
+
+<!-- local import does not work
+<link rel="import" href="bower_components/polymer/polymer.html">
+-->
+
+<dom-module id="tpl-header">
+  <template>
+    <style>
+        .header{
+            width: 100%;
+            height: 50px;
+            background-color: var(--headerColor);
+            color: white;
+        }
+
+        .logo{
+            float: left;
+            margin: 7px 20px 7px 20px;
+            width: 36px;
+            height: 36px;
+            background: var(--backgroundImage) no-repeat;
+        }
+
+        .headline{
+            float: right;
+            margin: 7px 20px 7px 20px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+    </style>
+
+    <div class="header">
+        <div class="logo"></div>
+        <p class="headline">
+            {{ headline }}
+        </p>
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: "tpl-header",
+
+      properties: {
+        color: String,
+        logo: String,
+        headline: String
+      },
+
+      //Changes the color and adds a logo after the web component is ready
+      ready: function(){
+        var color = this.color;
+        var image = "url(" + this.logo + ")";
+
+        this.customStyle['--headerColor'] = color;
+        this.customStyle['--backgroundImage'] = image;
+
+        this.updateStyles();
+      }
+    });
+  </script>
+</dom-module>

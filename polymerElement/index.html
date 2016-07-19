@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- import webcomponents.js -->
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+
+    <!-- import created polymer elements -->
+    <link rel="import" href="elements/tpl-tabs.html">
+    <link rel="import" href="elements/tpl-button.html">
+    <link rel="import" href="elements/tpl-header.html">
+    <link rel="import" href="elements/tpl-sidebar.html">
+  </head>
+  <body>
+
+    <tpl-header color='#21264F' logo='elements/resources/TPL_Logo.png' headline='Lorem Ipsum'></tpl-header>
+
+    <tpl-tabs elements='[{"name" : "first", "link" : "https://www.google.de/?gws_rd=ssl"},
+                    {"name" : "second", "link" : "https://www.google.de/maps/@48.752016,9.2965412,15z"},
+                    {"name" : "third", "link" : "https://techcrunch.com"}]' active='not'>
+
+    </tpl-tabs>
+
+    <tpl-sidebar elements='[{"headline" : "Menu 1",
+                            "items" : [
+                                {"name" : "Menu 1.1"},
+                                {"name" : "Menu 1.2"},
+                                {"name" : "Menu 1.3"}
+                            ]
+                        },
+                        {"headline" : "Menu 2",
+                            "items" : [
+                                {"name" : "Menu 2.1"},
+                                {"name" : "Menu 2.2"}
+                            ]
+                        },
+                        {"headline" : "Menu 3",
+                            "items" : [
+                                {"name" : "Menu 3.1"},
+                                {"name" : "Menu 3.2"},
+                                {"name" : "Menu 3.3"},
+                                {"name" : "Menu 3.4"},
+                                {"name" : "Menu 3.5"},
+                                {"name" : "Menu 3.6"}
+                            ]
+                        }]'>
+
+    </tpl-sidebar>
+
+    <tpl-button type='primary'>
+      Primary
+    </tpl-button>
+
+    <tpl-button type='danger'>
+      Danger
+    </tpl-button>
+
+    <tpl-button type='disabled'>
+      Disabled
+    </tpl-button>
+
+  </body>
+</html>

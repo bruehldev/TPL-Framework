@@ -1,0 +1,13 @@
+{
+  "name": "polymerElement",
+  "authors": [
+    "christophtrybek <christoph.trybek@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.5.0"
+  }
+}

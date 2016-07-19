@@ -1,0 +1,93 @@
+<!-- import latest release version of all components from polygit-->
+<link rel="import" href="https://polygit.org/components/polymer/polymer.html">
+
+<!-- local import does not work
+<link rel="import" href="bower_components/polymer/polymer.html">
+-->
+
+<dom-module id="tpl-sidebar">
+  <template>
+    <style>
+        #sidebar{
+            width: 200px;
+            /* border: 1px solid black; */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        #sidebar .headline{
+            display:block;
+            float:left;
+            list-style:none;
+            margin:0;
+            padding:0;
+            /* change to 100% and make it fit into the box */
+            width: 185px;
+            position:relative;
+            display:block;
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 3px 3px 3px 3px;
+            border-radius: 3px 3px 3px 3px;
+            margin:0 0 0 0px;
+            padding:10px 0px 10px 15px !important;
+            font-size: 18px !important;
+            font-weight:bold;
+            background: #E7E7E7;
+            color: white;
+            text-decoration:none;
+            cursor: pointer;
+        }
+
+        #sidebar .headline:hover{
+            background : #C6C6C6;
+        }
+
+        #sidebar .item{
+            padding-left : 50px;
+            cursor : pointer;
+            font-size: 16px !important;
+        }
+
+        .hidden{
+            display : none;
+        }
+
+
+    </style>
+
+    <div id="sidebar">
+        <template is="dom-repeat" items="{{ elements }}">
+            <p class="headline" on-tap="toggleMenu">{{ item.headline }}</p>
+            <template is="dom-repeat" items="{{ item.items }}">
+                <p class="item">{{ item.name }}</p>
+            </template>
+        </template>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: "tpl-sidebar",
+
+      properties: {
+        elements: {
+            type: Array,
+            value: function(){
+                // Get JSON array containing menu structure from HTML parameters
+                return [];
+            }
+        }
+      },
+
+      ready: function(){
+
+      },
+
+      toggleMenu: function(){
+        console.log("Hier koennte Ihre Rapline stehen");
+
+
+      }
+
+    });
+  </script>
+</dom-module>

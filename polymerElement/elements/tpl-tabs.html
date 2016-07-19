@@ -1,0 +1,107 @@
+<!-- import latest release version of all components from polygit-->
+<link rel="import" href="https://polygit.org/components/polymer/polymer.html">
+
+<!-- local import does not work
+<link rel="import" href="bower_components/polymer/polymer.html">
+-->
+
+<dom-module id="tpl-tabs">
+  <template>
+    <style>
+      :host {
+        font-family: sans-serif;
+        --tabWidth: 220px;
+      };
+
+      #tabs {
+         float:left;
+         width:1000px;
+         background:#fff;
+         border-bottom:4px solid #A5A5A5;
+         overflow:hidden;
+         position:relative;
+      }
+
+      #tabs ul {
+         clear:left;
+         float:left;
+         list-style:none;
+         margin:0;
+         padding:0;
+         position:relative;
+         text-align:center;
+      }
+
+      #tabs ul li {
+        display:block;
+        float:left;
+        list-style:none;
+        margin:0;
+        padding:0;
+        width: var(--tabWidth);
+        position:relative;
+        display:block;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 3px 3px 0px 0px;
+        border-radius: 3px 3px 0px 0px;
+        margin:0 0 0 0px;
+        padding:10px 15px 10px !important;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 18px !important;
+        font-weight:bold;
+        background: #E7E7E7;
+        color: white;
+        text-decoration:none;
+      }
+
+      #tabs ul li:hover {
+         background: #C6C6C6;
+         color:#fff;
+        cursor: pointer;
+      }
+
+      #tabs ul li.active,
+      #tabs ul li.active:hover {
+         color:#fff;
+         background: #A5A5A5;
+      }
+
+    </style>
+
+    <div id="tabs">
+       <ul>
+
+          <!-- Create HTML structure based on JSON array -->
+          <template is="dom-repeat" items="{{ elements }}">
+              <a href="{{ item.link }}"><li class$="{{ active }}">{{ item.name }}</li></a>
+          </template>
+       </ul>
+    </div>
+
+
+  </template>
+
+  <script>
+    Polymer({
+      is: "tpl-tabs",
+      properties: {
+        elements: {
+            type: Array,
+            value: function(){
+                // Get JSON array containing tab structure from HTML parameters
+                return [];
+            }
+        },
+        active: String,
+      },
+
+      //Resizes tabs after the web component is ready
+      ready : function(){
+        var tabSize = (1000/(this.elements.length)) - 30;
+        this.customStyle['--tabWidth'] = String(tabSize) + "px";
+
+        this.updateStyles();
+      }
+    });
+  </script>
+</dom-module>
